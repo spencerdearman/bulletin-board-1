@@ -7,14 +7,17 @@
     <hr>
 
     <h2> Add a new post</h2>
+    <% if flash[:alert] %>
+      <p style="color: red;"><%= flash[:alert] %></p>
+    <% end %>
     <form action="/insert_post" method="post">
       <div>
         <label for="title_field">Title</label>
-        <input id = "title_field" type="text" name="title">
+        <input id="title_field" type="text" name="title">
       </div>
 
       <div>
-        <label for="body_field>">Body</label>
+        <label for="body_field">Body</label>
         <textarea id="body_field" name="body"></textarea>
       </div>
 
@@ -31,7 +34,6 @@
         Add post
       </button>
     </form>
-
   </div>
 </div>
 
